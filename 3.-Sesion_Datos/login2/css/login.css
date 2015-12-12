@@ -1,0 +1,10 @@
+figure img{
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    border-width: 10px;
+    -webkit-border-image: url("../img/borde.gif") 28% round;
+    -moz-border-image: url("../img/borde.gif") 28% round;
+    border-image: url("../img/borde.gif") 28% round;
+}

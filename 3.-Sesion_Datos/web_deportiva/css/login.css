@@ -1,0 +1,82 @@
+img{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+#login{
+    width: 600px;
+    background: lightgreen;
+    border: double 5px green;
+    margin: auto;
+}
+#login {
+    text-align: center;
+    
+}
+#login form {
+    width: 345px;
+    margin: 10px auto 10px;
+}
+label {
+    display: inline-block;
+    width: 200px;
+}
+#login input, #login select {
+    
+    margin: 10px auto 10px;
+}
+.segundo_boton {
+    position: relative;
+    left: 37%;
+    top: -17%;
+}
+#aplicacion {
+      position: relative;
+      text-align: center;
+      width: 600px;
+      background: lightgreen;
+      border: double 5px green;
+      margin: auto;
+}
+#aplicacion input {
+    margin: 10px auto 10px;
+    position: relative;
+    left: -22%;
+}
+#aplicacion .segundo_boton {
+    position: absolute;
+    left: 63%;
+    top: 89%;
+}
+#palabraSecreta {
+    letter-spacing: 1.2em;
+}
+input.insert {
+    width: 20px;
+    border: 2px solid green; 
+    
+}
+label.insert {
+    margin: 10px;
+    width: 100px;
+}
+.button {
+    width: 100px;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+th {
+    background: black;
+    color: white;
+    border: solid;
+    width: 70px; 
+}
+td.nombre {
+    width: 200px;
+}
+td {
+    border: solid;
+}

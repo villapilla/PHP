@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jornada id_jornada="6">
+    <partido id_partido = "11">
+        <golesL>7</golesL>
+        <golesV>8</golesV>
+    </partido>
+    <partido id_partido ="12">
+        <golesL>9</golesL>
+        <golesV>7</golesV>
+    </partido>
+</jornada>
