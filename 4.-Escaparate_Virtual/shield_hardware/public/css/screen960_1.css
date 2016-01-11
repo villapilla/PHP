@@ -1,7 +1,7 @@
 .sprite_redes {
   display: inline-block;
   height: 40px;
-  background-image: url("../img/social-media-icons1.jpg");
+  background-image: url("http://localhost:8000/css/../img/social-media-icons1.jpg");
   background-repeat: no-repeat;
   width: 40px;
   border-radius: 23%;
@@ -184,15 +184,15 @@
 }
 @font-face {
   font-family: "letrasLogo";
-  src: url("../fonts/01 Digitall.ttf");
+  src: url("http://localhost:8000/css/../fonts/01 Digitall.ttf");
 }
 @font-face {
   font-family: "textoWeb";
-  src: url("../fonts/geforce-light.ttf");
+  src: url("http://localhost:8000/css/../fonts/geforce-light.ttf");
 }
 @font-face {
   font-family: "textoWebBold";
-  src: url("../fonts/geforce-bold.ttf");
+  src: url("http://localhost:8000/css/../fonts/geforce-bold.ttf");
 }
 main {
   max-width: 960px;
@@ -219,8 +219,10 @@ header {
   display: inline-block;
   margin: 4% 0 0 0;
 }
-#marca h1 {
-  font-size: 1em;
+#marca input {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
 }
 .marca_h2 {
   font-size: 60%;
@@ -307,43 +309,8 @@ nav {
   background-color: #4e6bd7;
   margin: 0 0 2% 0;
 }
-nav ul {
-  margin-bottom: 0;
-}
-.parent2 {
-  position: relative;
-  padding: 1.65%;
-  color: #0c36cd;
-}
-.parent2 .sub-nav2 {
-  display: none;
-  z-index: 3;
-  width: 960px;
-  line-height: 30px;
-  position: absolute;
-  top: 101%;
-  left: -101%;
-}
-.parent2 .sub-nav2 li::selection {
-  color: white;
-  background: #4e6bd7;
-}
-.parent2 .sub-nav2 li {
-  display: inline-block;
-  font-size: 0.5em;
-  height: 50px;
-  line-height: 15px;
-  width: 33.3%;
-  margin: 0 -5px;
-  background-color: #4e6bd7;
-  border: 1px white solid;
-  overflow: hidden;
-}
-.parent2 .sub-nav2 li a {
-  color: white;
-}
-.parent2 .visible2 {
-  display: inline-block;
+nav ul{
+    margin-bottom: 0;
 }
 .menu {
   display: inline-block;
@@ -366,7 +333,16 @@ nav ul {
   font-size: 0.6em;
   margin: 0;
   color: #0c36cd;
-  padding: 0;
+  padding: 5% 0;
+
+}
+.menu::selection {
+  color: #0c36cd;
+  background-color: white;
+}
+ul::selection {
+  color: #0c36cd;
+  background-color: white;
 }
 #lupa {
   position: absolute;
@@ -450,19 +426,15 @@ nav ul {
 .producto h2 {
   position: absolute;
   left: 0.1%;
-  top: 85%;
-  width: 100%;
+  top: 80.8%;
+  width: 86.5%;
   background-color: #4e6bd7;
   padding: 20px 10px 0 25px;
-  height: 3em;
+  height: 2em;
   border: white 1px solid;
   font-family: "textoWebBold";
   color: white;
   text-transform: uppercase;
-  font-size: 1em;
-  margin: 0;
-  line-height: 0;
-  overflow: hidden;
 }
 .producto var {
   position: absolute;
@@ -483,28 +455,30 @@ nav ul {
   width: 30%;
   z-index: 1;
 }
-.pagination {
-  margin: 20px 40%;
+#paginacion {
+  background-color: #0c36cd;
+  width: 100%;
+  margin: 35px 0 25px 0;
 }
-.pagination .active > a,
-.pagination .active > span,
-.pagination .active > a:hover,
-.pagination .active > span:hover,
-.pagination .active > a:focus,
-.pagination .active > span:focus {
+#paginacion ul {
+  margin: auto;
+  width: 32%;
+}
+#paginacion ul li {
+  display: inline-block;
   color: white;
-  background-color: #4e6bd7;
-  border-color: #4e6bd7;
+  font-family: "textoWebBold";
+  width: 18%;
+  vertical-align: middle;
 }
-.pagination li > a,
-.pagination li > span {
-  color: #0c36cd;
+#paginacion ul li a {
+  display: inline-block;
+  color: white;
+  font-size: 1.5em;
+  margin: 10px;
 }
-.pagination li > a:hover,
-.pagination li > span:hover,
-.pagination li > a:focus,
-.pagination li > span:focus {
-  color: #4e6bd7;
+#paginacion ul li img {
+  width: 100%;
 }
 #oferta_especial {
   width: 100%;
@@ -543,7 +517,7 @@ nav ul {
   display: inline-block;
   height: 100%;
   margin-top: 0.5%;
-  background-image: url("../img/Controles_multimedia.png");
+  background-image: url("http://localhost:8000/css/../img/Controles_multimedia.png");
   background-size: 540%;
   background-repeat: no-repeat;
   width: 6%;
@@ -615,7 +589,7 @@ footer ul {
 .facebook {
   display: inline-block;
   height: 40px;
-  background-image: url("../img/social-media-icons1.jpg");
+  background-image: url("http://localhost:8000/css/../img/social-media-icons1.jpg");
   background-repeat: no-repeat;
   width: 40px;
   border-radius: 23%;
@@ -631,7 +605,7 @@ footer ul {
 .twitter {
   display: inline-block;
   height: 40px;
-  background-image: url("../img/social-media-icons1.jpg");
+  background-image: url("http://localhost:8000/css/../img/social-media-icons1.jpg");
   background-repeat: no-repeat;
   width: 40px;
   border-radius: 23%;
@@ -647,7 +621,7 @@ footer ul {
 .google {
   display: inline-block;
   height: 40px;
-  background-image: url("../img/social-media-icons1.jpg");
+  background-image: url("http://localhost:8000/css/../img/social-media-icons1.jpg");
   background-repeat: no-repeat;
   width: 40px;
   border-radius: 23%;
@@ -674,4 +648,37 @@ footer ul {
 }
 .marca h3 {
   font-size: 1.8em;
+}
+.parent2 {
+    position: relative;
+    padding: 1.65%;
+    color: #0c36cd;
+}
+.sub-nav2 {
+  display: none;
+  z-index: 3;
+  width: 960px;
+  line-height: 30px;
+  position: absolute;
+  top: 101%;
+  left: -101%;
+}
+.sub-nav2 li::selection {
+  color: white;
+  background: #4e6bd7;
+}
+.sub-nav2 li {
+  display: inline-block;
+  font-size: 0.5em;
+  height: 50px;
+  line-height: 50px;
+  width: 33.3%;
+  margin: 0 -5px ;
+  background-color: #4e6bd7;
+  border: 1px white solid;
+  overflow: hidden;
+  color: white;
+}
+.visible2 {
+    display: inline-block;
 }

@@ -26,7 +26,8 @@ Route::get('register/verify/{confirmationCode}', [
 ]);
 
 Route::group(['prefix' => 'profile', 'namespace' => '\Profiles'], function() {
-
     Route::resource('users', 'UsersProfile');
-    
+});
+Route::group(['prefix' => 'categories'], function() {
+    Route::resource('products', 'CategoriesController');
 });

@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Product;
+use Symfony\Component\HttpFoundation\Response;
+use View;
+
 class HomeController extends Controller {
 
 	/*
@@ -31,7 +35,11 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+                $products = Product::where('offer', '=', '1')->paginate(9);
+                foreach($products as $product) {
+                    $product->discountPrice();
+                }
+                return View::make('home', array('products' => $products));
 	}
 
 }

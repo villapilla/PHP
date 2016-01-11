@@ -56,7 +56,8 @@
 						</div>
                                 </div>
 					{!! Form::close() !!}
-                                    {!! Form::model($profile, ['route' => ['profile.users.destroy', Auth::user()] , 'method' => 'DELETE', 'class' => 'form-horizontal']) !!}
+				</div>
+                                 {!! Form::model($profile, ['route' => ['profile.users.destroy', Auth::user()] , 'method' => 'DELETE', 'class' => 'form-horizontal']) !!}
                                             <div class="form-group">
                                                     <div class="col-md-6 col-md-offset-4">
                                                             <button type="submit" class="btn btn-danger">
@@ -65,7 +66,6 @@
                                                     </div>
                                             </div>
                                     {!! Form::close() !!}
-				</div>
 			</div>
 		</div>
 	</div>

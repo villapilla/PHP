@@ -15,7 +15,7 @@ class Product extends Model implements AuthenticatableContract, CanResetPassword
 	 *
 	 * @var string
 	 */
-	protected $table = 'category';
+	protected $table = 'product';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -23,5 +23,10 @@ class Product extends Model implements AuthenticatableContract, CanResetPassword
 	 * @var array
 	 */
 	protected $fillable = ['name', 'price','description','discount','image', 'promotion', 'category_id'];
+        
+        
+        public function discountPrice() {
+            $this->price = number_format($this->price * (1 - $this->discount), 2, ',', '');
+        }
 
 }

@@ -63,8 +63,31 @@
                     @endif            
             </section>
         </header>
+        <nav>
+                <ul>
+                    <li class="menu"><a href="{{ url('/') }}">Inicio</a></li>
+                    <li class="menu parent2">Productos
+                        <ul class="sub-nav2">
+                            @foreach($category as $type) 
+                            <li><a href="{{ url('/categories/products/' . $type->id) }}">{{ $type->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="menu"><a href="">Buscaremos</a></li>
+                </ul>
+                    <figure id="banner">
+                       
+                        <img class="imagen1" src="{{ asset('/img/img_transformada.png') }}" alt="publicidad">
+                        <img class="imagen2" src="{{ asset('/img/banner-intel.png') }}" alt="publicidad">
+                        <img class="imagen3" src="{{ asset('/img/banner_amd.png') }}" alt="publicidad">
+                        <img class="imagen4" src="{{ asset('/img/baner-gigabyte.png') }}" alt="publicidad">
+                        <img class = "absolute izquierda" src="{{ asset('/img/flecha_banner.png') }}" alt="flecha dcha">
+                         <img class = "absolute derecha" src="{{ asset('/img/flecha_banner.png') }}" alt="flecha izda">
+                    </figure>
+            </nav>
             @yield('content')
-        <footer>
+             
+            <footer>
                 <section>
                     <ul>
                         <li>Sobre nosotros</li>
@@ -105,7 +128,7 @@
                         <figcaption>
                             Pago seguro
                         </figcaption>
-                        <img src="img/tarjetas.png" alt="tarjetas bancarias">
+                        <img src="{{ asset('/img/tarjetas.png') }}" alt="tarjetas bancarias">
                     </figure>
                 </section>
             </footer>

@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Product;
+use Symfony\Component\HttpFoundation\Response;
+use View;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +34,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$products = Product::where('promotion', '=', '1')->paginate(9);
+                return View::make('welcome', array('products' => $products));
 	}
 
 }

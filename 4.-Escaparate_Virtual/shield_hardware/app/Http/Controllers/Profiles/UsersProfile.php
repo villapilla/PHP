@@ -52,7 +52,14 @@ class UsersProfile extends Controller {
 	public function update($id, Request $request)
 	{
             $profile = User::find($id)->profile;
-            $profile->fill($request->all());
+            $data = $request->all();
+            $input = array_map(function($n) {
+                if($n === "") {
+                    $n = null;
+                } 
+                return $n;
+            }, $data);
+            $profile->fill($input);
             $profile->save();
 
             Session::flash('messagge' , 'Perfil actualizado');

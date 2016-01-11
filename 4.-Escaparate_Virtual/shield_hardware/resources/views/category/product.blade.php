@@ -13,7 +13,7 @@
                         </h2>
                         @if ($product->offer === 1)
                             <figure class="oferta">
-                                        <img src="{{ url('img/boton_rojo.png') }}" alt="oferta especial">
+                                    <img src="{{ url('img/boton_rojo.png') }}" alt="oferta especial">
                             </figure>
                         @endif
                     </figure>

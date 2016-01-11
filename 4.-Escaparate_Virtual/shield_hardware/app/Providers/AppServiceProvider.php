@@ -1,6 +1,9 @@
 <?php namespace App\Providers;
 
+use App\Category;
 use Illuminate\Support\ServiceProvider;
+use View;
+
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +14,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+            $category = Category::all();
+            View::share('category', $category);
 	}
 
 	/**
