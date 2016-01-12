@@ -2,6 +2,16 @@
 
 @section('content')
     <section>
+        <form  action="/" method="POST" class="order-by reform">
+            <h1>{{ $actualCategory }}</h1>
+            <h2>Ordenar por:</h2>
+            <select>
+                <option value="0">----</option>
+                <option value="1">A-Z</option>
+                <option value="2">Precio Mayor </option>
+                <option value="3">Precio Menor</option>
+            </select>
+        </form>
         <ul>
             @foreach ($products as $product)
             <li class="producto">
@@ -24,6 +34,5 @@
             </li>
             @endforeach
         </ul>    
-            {!! $products->render() !!}
      </section>
 @endsection

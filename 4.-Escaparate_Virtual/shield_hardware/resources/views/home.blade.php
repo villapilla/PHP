@@ -2,6 +2,8 @@
 
 @section('content')
     <section>
+        <form  action="/" method="POST" class="order-by">
+        </form>
         <ul>
             @foreach ($products as $product)
             <li class="producto">

@@ -4,12 +4,19 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Product;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use View;
 
 class CategoriesController extends Controller {
 
+    
+    
+        public function __construct(Guard $auth)
+	{
+		$this->auth = $auth;
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -48,8 +55,20 @@ class CategoriesController extends Controller {
 	 */
 	public function show($id)
 	{
-            $products = Product::where('category_id', '=', $id)->paginate(9);
-            return View::make('category.product', array('products' => $products));
+            $category = Category::find($id)->name;
+            $products = Product::where('category_id', '=', $id)->get();
+            if( ! $this->auth->guest()) {
+               foreach($products as $product) {
+                    $product->discountPrice();
+                }
+            } else {
+                $products = $products->filter(function($products)
+                {
+                    return ! $products->isOffer();
+                });
+
+            }
+            return View::make('category.product', array('products' => $products, 'actualCategory' => $category));
             
             
             

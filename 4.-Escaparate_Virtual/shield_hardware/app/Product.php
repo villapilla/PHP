@@ -28,5 +28,9 @@ class Product extends Model implements AuthenticatableContract, CanResetPassword
         public function discountPrice() {
             $this->price = number_format($this->price * (1 - $this->discount), 2, ',', '');
         }
+        
+        public function isOffer() {
+            return $this->offer === 1;
+        }
 
 }
