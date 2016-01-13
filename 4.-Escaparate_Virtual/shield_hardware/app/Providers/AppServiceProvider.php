@@ -14,8 +14,17 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+            /**
+             * Todas las categorias de productos para poder cargarlas en 
+             * el menu de navegación
+             */
             $category = Category::all();
             View::share('category', $category);
+            /**
+             * Array que conforma el select de ordenación de los productos
+             */
+            $select = ['0' => '----', '1' => 'A-Z', '2' => 'Z-A', '3' => 'Precio Mayor', '4' => 'Precio Menor'];
+            View::share('selectOrder', $select);
 	}
 
 	/**

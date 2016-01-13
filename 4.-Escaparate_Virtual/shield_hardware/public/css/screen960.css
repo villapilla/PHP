@@ -359,7 +359,7 @@ nav ul {
   width: 100%;
   padding: 5% 0;
 }
-.menu input {
+/*.menu input {
   background-color: blue;
   position: relative;
   width: 90%;
@@ -367,7 +367,7 @@ nav ul {
   margin: 0;
   color: #0c36cd;
   padding: 0;
-}
+}*/
 #lupa {
   position: absolute;
   width: 3%;
@@ -700,4 +700,45 @@ h2 {
 }
 nav {
     margin: 0;
+}
+.no_display {
+    display: none;
+}
+.parent3 {
+  position: relative;
+  padding: 1.65%;
+  color: #0c36cd;
+}
+.parent3 .sub-nav3 {
+  display: none;
+  z-index: 3;
+  width: 960px;
+  line-height: 30px;
+  position: absolute;
+  top: 101%;
+  left: -101%;
+}
+.parent3 .sub-nav3 li {
+  display: inline-block;
+  font-size: 0.5em;
+  width: 33%;
+  margin: 0 -5px;
+  background-color: #0c36cd;
+  overflow: hidden;
+  border-bottom-left-radius: 10% 10%;
+  border-bottom: 10px solid #0c36cd;
+    width: 33.9%;
+    border-left: 8px solid #0c36cd;
+    position: relative;
+    right: 5px;
+}
+.parent3 .sub-nav3 input {
+    width: 86%;
+}
+
+.parent3 .sub-nav3 button {
+    margin: -5px 0px 0px -3px;
+}
+.parent3 .visible3 {
+  display: inline-block;
 }

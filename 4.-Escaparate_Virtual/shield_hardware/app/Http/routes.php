@@ -28,6 +28,13 @@ Route::get('register/verify/{confirmationCode}', [
 Route::group(['prefix' => 'profile', 'namespace' => '\Profiles'], function() {
     Route::resource('users', 'UsersProfile');
 });
-Route::group(['prefix' => 'categories'], function() {
-    Route::resource('products', 'CategoriesController');
-});
+
+Route::get('categories/products/{id}', 'CategoriesController@show');
+
+Route::post('/categories/{id}/sort', 'CategoriesController@sort');
+
+Route::post('/categories/search', 'CategoriesController@search');
+
+/*Route::group(['prefix' => 'categories'], function() {
+    Route::resource('category', 'CategoriesController');
+});*/

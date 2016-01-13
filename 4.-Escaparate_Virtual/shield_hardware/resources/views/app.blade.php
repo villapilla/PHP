@@ -73,7 +73,19 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="menu"><a href="">Buscaremos</a></li>
+                    <li class="menu parent3">Buscar
+                        <ul class="sub-nav3">
+                            <li>
+                                <form action="/categories/search" method="POST">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="text" placeholder="Buscar" name="search">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                     <figure id="banner">
                        

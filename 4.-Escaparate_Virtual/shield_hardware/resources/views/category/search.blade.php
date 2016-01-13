@@ -2,18 +2,16 @@
 
 @section('content')
     <section>
-        <form  action="/categories/{{ $actualCategory->id }}/sort/ " method="POST" class="order-by reform">
-            <h1>{{ $actualCategory->name }}</h1>
-            <h2>Ordenar por:</h2>
-            @if (isset($selected))
-                {!! Form::select('order', $selectOrder, $selected) !!}
-            @else
-                {!! Form::select('order', $selectOrder, '0') !!}
-            @endif
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" value="hidden" class="no_display">
+        
+
         </form>
         <ul>
+            @if ($products->isEmpty())
+            <h1>No encontramos resultados a su consulta</h1>
+            
+            
+            
+            @else
             @foreach ($products as $product)
             <li class="producto">
                 <article>
@@ -35,5 +33,6 @@
             </li>
             @endforeach
         </ul>    
+        @endif
      </section>
 @endsection

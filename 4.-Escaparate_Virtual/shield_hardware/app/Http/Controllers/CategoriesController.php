@@ -2,10 +2,9 @@
 
 use App\Category;
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use View;
 
@@ -55,7 +54,7 @@ class CategoriesController extends Controller {
 	 */
 	public function show($id)
 	{
-            $category = Category::find($id)->name;
+            $category = Category::findOrFail($id);
             $products = Product::where('category_id', '=', $id)->get();
             if( ! $this->auth->guest()) {
                foreach($products as $product) {
@@ -70,11 +69,55 @@ class CategoriesController extends Controller {
             }
             return View::make('category.product', array('products' => $products, 'actualCategory' => $category));
             
-            
-            
-            
 	}
 
+        public function sort($id, Request $request) {
+            $order = $request->order;
+            $category = Category::findOrFail($id);
+            $products = Product::where('category_id', '=', $id);
+            switch ($order) {
+                case "1": $products = $products->orderByName()->get(); break;
+                case "2": $products = $products->orderByName("DESC")->get(); break;
+                case "3": $products = $products->orderByPrice('DESC')->get(); break;
+                case "4": $products = $products->orderByPrice()->get(); break;
+                default: $products = $products->get(); break;
+            }
+            if( ! $this->auth->guest()) {
+               foreach($products as $product) {
+                    $product->discountPrice();
+                }
+            } else {
+                $products = $products->filter(function($products)
+                {
+                    return ! $products->isOffer();
+                });
+            }
+            return View::make('category.product', array('products' => $products, 'actualCategory' => $category, 'selected' => $order));
+        }
+        
+        
+        public function search(Request $request) {
+            $products = Product::where('name', 'like', '%' . $request->search . '%');
+            if( ! $this->auth->guest()) {
+               $products = $products
+                        ->orderBy('offer', 'DESC')
+                        ->take(15)
+                        ->get();
+               foreach($products as $product) {
+                    $product->discountPrice();
+                }
+            } else {
+                $products = $products
+                        ->orderBy('offer', 'ASC')
+                        ->take(15)
+                        ->get()
+                        ->filter(function($products)
+                        {
+                            return ! $products->isOffer();
+                        });
+            }
+            return View::make('category.search', array('products' => $products));
+        }
 	/**
 	 * Show the form for editing the specified resource.
 	 *

@@ -32,5 +32,19 @@ class Product extends Model implements AuthenticatableContract, CanResetPassword
         public function isOffer() {
             return $this->offer === 1;
         }
+        
+        public function scopeOrderByName($query, $order = 'ASC')
+        {
+            return $query->orderBy('name', $order);
+        }
+        
+        public function scopeOrderByPrice($query, $order = 'ASC')
+        {
+            return $query->orderBy('price', $order);
+        }
+       
+       /* public function scopeProductsByCategory($query, $id) {
+            return $query->where('category_id', '=', $id);
+        }*/
 
 }
